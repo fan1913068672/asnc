@@ -14,6 +14,7 @@
             {!! $data->a_context !!}
         </div>
     </div>
+    <!-- 如果有图片 就显示图片 -->
     @if(count($allPath)>0)
     <div class="panel panel-default">
         <div class="panel-heading">

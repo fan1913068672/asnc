@@ -7,9 +7,9 @@
     @include('layout.head')
     <div class="row">
         <!-- 导航条 -->
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-2">
             <ul class="nav nav-pills nav-stacked">
-                <li id="ztwz" role="presentation"><a href="{{url('ht')}}" target="main">添加文章</a></li>
+                <li id="ztwz" role="presentation"><a href="{{url('article/create')}}" target="main">添加文章</a></li>
                 <li id='scwz' role="presentation"><a href="{{url('delete_article')}}" target="main">删除文章</a></li>
                 <li id='scwz' role="presentation"><a href="{{url('info')}}" target="main">文章信息</a></li>
                 <li id='lgout' class="dropdown">
@@ -33,7 +33,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-xs-12 col-md-8">
+        <div class="col-xs-12 col-md-10">
             <!-- 执行窗口 -->
             <div class="panel panel-default">
                 <div class="panel-body">

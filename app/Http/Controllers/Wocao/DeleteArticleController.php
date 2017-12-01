@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 
+
 class DeleteArticleController extends Controller
 {
     public function index(){

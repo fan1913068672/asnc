@@ -1,7 +1,8 @@
-<html>
+<!-- 文章页面 -->
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
 <head>
     @include('layout.all')
-
 </head>
 <body>
 <div class="container">

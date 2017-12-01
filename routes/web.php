@@ -24,9 +24,11 @@ Route::group(['namespace'=>'Wocao'],function(){
     Route::resource('gzzd','GzzdController');
     Route::resource('szgz','SzgzController');
     Route::resource('swb','SwbController');
-    Route::resource('pc','PictureController')->middleware('auth');
-    Route::get('ht','HtController@get')->middleware('auth');
-    Route::post('ht','HtController@post')->middleware('auth');
+    Route::resource('pc','PictureController');
+    //记得加上中间件 auth
+    //试图直接访问ht是不可以的之后可以改变方法来处理
+    Route::get('article/create','HtController@get');
+    Route::post('article','HtController@post');
 });
 Route::group(['middleware'=>'auth'],function(){
     Route::get('info',function(){
