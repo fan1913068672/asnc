@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
-
+                        {{--//这个token是外界传值进来的--}}
                         <input type="hidden" name="token" value="{{ $token }}">
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

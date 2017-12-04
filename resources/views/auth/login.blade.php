@@ -3,7 +3,7 @@
     <script>
         function refreshCaptcha(){
             $.ajax({
-                url: "/login/refereshcapcha",
+                url: "{{url('login/refereshcapcha')}}",
                 type: 'get',
                 dataType: 'html',
                 success: function(json) {
@@ -71,6 +71,7 @@
                                 </span>
                             </div>
                         </div>
+                        <!-- Capcha -->
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">

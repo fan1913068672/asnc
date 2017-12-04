@@ -25,7 +25,8 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+     //重置玩密码返回到登录界面
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.

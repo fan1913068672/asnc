@@ -1,10 +1,11 @@
 <html>
 <head>
-    @include('layout.all')
+@include('layout.all')
 </head>
 <body>
 <div class="container">
     @include('layout.head')
+
     <div class="row">
         <!-- 导航条 -->
         <div class="col-xs-6 col-md-2">

@@ -15,6 +15,7 @@
                     @endif
 
                     <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                       {{--提交表单的时候都有这个token生成的--}}
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -30,7 +31,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- 提交 --}}
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

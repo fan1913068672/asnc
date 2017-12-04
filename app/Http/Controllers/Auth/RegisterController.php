@@ -28,6 +28,12 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+    protected function redirectTo()
+    {
+//        return '/';
+//        dd(route('registered'));
+        return route('registered');
+    }
 
     /**
      * Create a new controller instance.
@@ -48,8 +54,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            //名字验证规则：不可为空|字符串|最大字符255
             'name' => 'required|string|max:25',//
+            //邮件的验证规则:不可为空|字符串|邮件|最大字符255|在users表中独一无二
             'email' => 'required|string|email|max:255|unique:users',
+            //密码验证规则:不可为空|字符串|最小长度6|密码重复验证
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -60,12 +69,17 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+     //这个事件不能改那我就改一下触发的机制
+
+
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'active' => 0,
             'password' => bcrypt($data['password']),
         ]);
+
     }
 }
