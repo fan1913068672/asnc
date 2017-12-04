@@ -6,7 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 class RegisterController extends Controller
 {
     /*
@@ -71,7 +73,18 @@ class RegisterController extends Controller
      */
      //这个事件不能改那我就改一下触发的机制
 
+     public function register(Request $request)
+     {
 
+         $this->validator($request->all())->validate();
+
+         event(new Registered($user = $this->create($request->all())));
+        //注册归注册别登录
+              // $this->guard()->login($user);
+             return $this->registered($request, $user)
+                             ?: redirect($this->redirectPath());
+
+     }
     protected function create(array $data)
     {
         return User::create([
