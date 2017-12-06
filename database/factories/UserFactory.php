@@ -23,3 +23,19 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Article::class, function (Faker $faker) {
+  $types = ['中心简介',
+  '政策法规',
+  '规章制度',
+  '新闻中心',
+  '思政工作',
+  '舍务部',
+  '生活常识',
+  '公告',];
+    return [
+        'a_title' => str_random(20),
+        'a_context' => str_random(200),
+        'a_type' =>$types[rand(0,count($types)-1)],
+    ];
+});

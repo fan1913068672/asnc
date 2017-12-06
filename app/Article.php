@@ -9,5 +9,5 @@ class Article extends Model
     //
 
     protected $table = 'asnc_article';
-    protected $primarykey='a_id';
+    protected $primaryKey='a_id';
 }

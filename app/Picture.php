@@ -8,5 +8,5 @@ class Picture extends Model
 {
     //
     protected $table = 'asnc_picture';
-    protected $primarykey='p_id';
+    protected $primaryKey='p_id';
 }

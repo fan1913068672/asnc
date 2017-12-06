@@ -16,7 +16,8 @@ class ActiveController extends Controller
     | your application to your users. Feel free to explore this trait.
     |
     */
-    function active($email){
+    function active($encrypt_email){
+        $email = decrypt($encrypt_email);
         $user = User::where('email',$email)->first();
         $user->active=1;
         $user->save();

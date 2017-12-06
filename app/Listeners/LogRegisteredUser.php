@@ -32,14 +32,13 @@ class LogRegisteredUser
     public function handle($event)
     {
         $user = $event->user;
-        $email = $user->email;
+
+        $email = encrypt($user->email);
         $url = route('active',['email'=>$email,],true);
         Mail::send('emails.welcome',['url'=>$url],
             function($message) use($user){
             $message->to(config('mail.from.address'));
             $message->subject('激活');
         });
-
-
     }
 }

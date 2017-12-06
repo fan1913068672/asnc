@@ -25,9 +25,14 @@
             </div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <a class="list-group-item" href="http://202.199.248.12/tmweb/login.aspx">教务管理系统</a>
-                    <a class="list-group-item" href="http://www.asnc.edu.cn/">学院官网</a>
-                    <a class="list-group-item" href="http://202.199.252.161">学生工作处</a>
+                    <a class="list-group-item" target="view_window" href="http://202.199.248.12/tmweb/login.aspx">教务管理系统</a>
+                    <a class="list-group-item" target="view_window" href="http://www.asnc.edu.cn/">学院官网</a>
+                    <a class="list-group-item" target="view_window" href="http://202.199.252.161">学生工作处</a>
+                    @foreach($data3 as $v)
+                        <a class="list-group-item" target="view_window" href='{{$v->link_url}}'>
+                          {{$v->link_name}}
+                        </a>
+                    @endforeach
                 </ul>
 
             </div>
@@ -48,27 +53,31 @@
                         <?php $i++?>
                     @endforeach
                 </ul>
-
             </div>
         </div>
-            <div class="panel  panel-primary">
+          <div class="panel  panel-primary">
+                  <!-- 3d 图片浏览start -->
+                  <div class="carousel">
+                      <figure>
+                          <img src="{{asset('upload/img_3d/1.jpg')}}" alt="">
+                          <img src="{{asset('upload/img_3d/2.jpg')}}" alt="">
+                          <img src="{{asset('upload/img_3d/3.jpg')}}" alt="">
+                      </figure>
+                      <nav>
+                          <button class="nav prev">Prev</button>
+                          <button class="nav next">Next</button>
+                      </nav>
+                  </div>
+                  <!-- 3d 图片浏览end-->
 
-                    <!-- 3d 图片浏览start -->
-                    <div class="carousel">
-                        <figure>
-                            <img src="{{asset('upload/img_3d/1.jpg')}}" alt="">
-                            <img src="{{asset('upload/img_3d/2.jpg')}}" alt="">
-                            <img src="{{asset('upload/img_3d/3.jpg')}}" alt="">
-                        </figure>
-                        <nav>
-                            <button class="nav prev">Prev</button>
-                            <button class="nav next">Next</button>
-                        </nav>
-                    </div>
-                    <!-- 3d 图片浏览end-->
-
-            </div>
-
+          </div>
+          <div class="panel panel-default">
+              <div class="panel-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=762388251&auto=1&height=430"></iframe>
+                  </div>
+              </div>
+          </div>
         </div>
         <div class="col-sm-3 col-md-6 col-lg-8">
         <!-- 公告栏 -->
@@ -86,9 +95,7 @@
                         </a>
                         <?php $i++?>
                     @endforeach
-
                 </ul>
-
                 <nav aria-label="Page navigation">
                     {{$data->links()}}
                 </nav>
@@ -109,7 +116,6 @@
                         <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="4"></li>
                     </ol>
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">

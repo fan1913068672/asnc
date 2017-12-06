@@ -13,6 +13,8 @@
                 <li id="ztwz" role="presentation"><a href="{{url('article/create')}}" target="main">添加文章</a></li>
                 <li id='scwz' role="presentation"><a href="{{url('delete_article')}}" target="main">删除文章</a></li>
                 <li id='scwz' role="presentation"><a href="{{url('info')}}" target="main">文章信息</a></li>
+                <li role="presentation"><a href="{{url('links')}}" target="main">链接信息</a></li>
+                <li role="presentation"><a href="{{url('links/create')}}" target="main">新增链接</a></li>
                 <li id='lgout' class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                         {{ Auth::user()->name }} <span class="caret"></span>

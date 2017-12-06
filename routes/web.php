@@ -41,6 +41,12 @@ Route::group(['middleware'=>'auth','namespace'=>'Wocao'],function(){
     Route::get('delete_article','DeleteArticleController@index');
     Route::post('delete_article','DeleteArticleController@post');
     Route::get('delete_article/{a_id}','DeleteArticleController@delete');
+
+    Route::resource('links','LinkController');
+    Route::post('linkchange','LinkController@changeOrder');
+    Route::post('links/changeName','LinkController@changeName');
+    Route::post('links/changeUrl','LinkController@changeUrl');
+
 });
 
 //验证码服务
@@ -49,7 +55,13 @@ Auth::routes();
 Route::get('register/registered',function(){
     return view('test.test_register');
 })->name('registered');
-Route::get('active/{email}',['uses'=>'Auth\ActiveController@active','as'=>'active']);
+Route::get('active/{encrypt_email}',['uses'=>'Auth\ActiveController@active','as'=>'active']);
 Route::get('fail',function(){
     return "此用户没有激活";
+});
+Route::get('test',function(){
+  $email = '1913068672@qq.com';
+  $encrypt_email = encrypt($email);
+  // dump($encrypt_email);
+  // dd(decrypt($encrypt_email));
 });
