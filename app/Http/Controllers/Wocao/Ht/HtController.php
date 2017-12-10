@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Ht;
 
 use App\Http\Controllers\Controller;
-use App\Article;
+use App\Http\Model\Article;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -13,6 +13,11 @@ class HtController extends Controller
     public function get(){
         return view('wocao.ht');
     }
+
+    public function info(){
+        return view('wocao.info');
+    }
+
     //传入参数满足要求才做以下的事情
     public function post(){
         //为这个请求写个验证器

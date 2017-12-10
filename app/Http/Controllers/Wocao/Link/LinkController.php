@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Link;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

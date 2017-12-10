@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Article;
 use App\Http\Controllers\Controller;
-use App\Picture;
+use App\Http\Model\ArticlePicture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 
-class PictureController extends Controller
+class ArticlePictureController extends Controller
 {
     public function index(){
         $a_id = session('a_id');
@@ -21,7 +21,7 @@ class PictureController extends Controller
         $input = $request->file('picture');
         $path = $input ->store('upload');
         $url = Storage::url($path);
-        $picture = new Picture;
+        $picture = new ArticlePicture;
         $picture->a_id = $a_id;
         $picture->p_path = $url;
         $res = $picture->save();

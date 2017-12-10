@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Article::class, function (Faker $faker) {
+$factory->define(App\Http\Model\Article::class, function (Faker $faker) {
   $types = ['中心简介',
   '政策法规',
   '规章制度',

@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Index;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Article;
-use App\Picture;
+use App\Http\Model\Article;
+use App\Http\Model\ArticlePicture;
 use Illuminate\Support\Facades\Storage;
 
-class ZcfgController extends Controller
+class GzzdController extends Controller
 {
     public function index(){
         //分页10篇文章一
-        $data = Article::where('a_type','政策法规')->orderBy('created_at','desc')->paginate(10);
-        return view('wocao.zcfg')->with(compact('data'));
+        $data = Article::where('a_type','规章制度')->orderBy('created_at','desc')->paginate(10);
+        return view('wocao.gzzd')->with(compact('data'));
     }
     //
     public function show($a_id){
         //通过文章id获取图片
         $data = Article::where('a_id',$a_id)->first();
         //得到图片
-        $pictures = Picture::all()->where('a_id',$a_id);
+        $pictures = ArticlePicture::all()->where('a_id',$a_id);
         // dd($pictures);
         $allPath = [];
         foreach($pictures as $picture){

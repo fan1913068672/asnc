@@ -5,7 +5,7 @@
 <body>
 <div class="container">
 
-    {!! Form::open(['action' => "Wocao\DeleteArticleController@post",'method' => 'post']) !!}
+    {!! Form::open(['action' => "Wocao\Article\DeleteArticleController@post",'method' => 'post']) !!}
     {{csrf_field()}}
 
     <select class="selectpicker" name="a_type">

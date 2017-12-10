@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAsncPictureTable extends Migration
+class CreateAsncArticlePictureTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class CreateAsncPictureTable extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('asnc_picture')) {
-            Schema::create('asnc_picture', function (Blueprint $table) {
+        if (!Schema::hasTable('asnc_article_picture')) {
+            Schema::create('asnc_article_picture', function (Blueprint $table) {
                 $table->increments('p_id');
                 $table->integer('a_id');
                 $table->text('p_path');
@@ -31,6 +31,6 @@ class CreateAsncPictureTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asnc_picture');
+        Schema::dropIfExists('asnc_article_picture');
     }
 }

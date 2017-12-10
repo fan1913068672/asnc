@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Article;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Article;
-use App\Picture;
+use App\Http\Model\Article;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;

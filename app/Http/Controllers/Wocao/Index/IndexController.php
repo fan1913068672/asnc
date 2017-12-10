@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Wocao;
+namespace App\Http\Controllers\Wocao\Index;
 use App\Http\Controllers\Controller;
-use App\Picture;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use App\Article;
+use App\Http\Model\Article;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Model\Links;
 class IndexController extends Controller
