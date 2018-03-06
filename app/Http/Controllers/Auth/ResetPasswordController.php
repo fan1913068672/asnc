@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-
+use Illuminate\Auth\Events\PasswordReset;
 class ResetPasswordController extends Controller
 {
     /*

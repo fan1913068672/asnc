@@ -14,7 +14,7 @@ class NewsController extends Controller
     public function index(){
         //分页10篇文章一
       $data = Article::where('a_type','新闻中心')->orderBy('created_at','desc')->paginate(10);
-      return view('wocao.news')->with(compact('data'));
+      return view('wocao.face.news')->with(compact('data'));
     }
     //
     public function show($a_id){
@@ -33,6 +33,6 @@ class NewsController extends Controller
       // dd($pictures);
       //把这个图片绑定发送到新页面
       // dd($data);
-      return view('wocao.article')->with(compact('data','allPath'));
+      return view('wocao.face.article')->with(compact('data','allPath'));
     }
 }

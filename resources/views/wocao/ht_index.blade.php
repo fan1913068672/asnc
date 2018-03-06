@@ -7,7 +7,16 @@
     @include('layout.head')
 
     <div class="row">
-        <!-- 导航条 -->
+        {{-- 导航条start --}}
+        <style type="text/css">
+                  .nav>li>a[href]{
+                    line-height: 50px;
+                    font-size : 10px;
+                    color:#337ab7;
+                    }
+                    
+                }
+        </style>
         <div class="col-xs-6 col-md-2">
             <ul class="nav nav-pills nav-stacked">
                 <li id="ztwz" role="presentation"><a href="{{url('article/create')}}" target="main">添加文章</a></li>
@@ -37,7 +46,7 @@
             </ul>
         </div>
         <div class="col-xs-12 col-md-10">
-            <!-- 执行窗口 -->
+            {{-- 执行窗口 --}}
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="embed-responsive embed-responsive-16by9">
@@ -49,8 +58,13 @@
 
     </div>
 </div>
+@include("layout.jquery")
+@include("layout.bootstrap_js")
+<script src='{{asset("ckeditor/ckeditor.js")}}'></script>
+{{-- select --}}
+<script src="{{asset('js/bootstrap-select.min.js')}}"></script>
+{{-- select --}}
 </body>
-@include('layout.all2')
 
 
 </html>

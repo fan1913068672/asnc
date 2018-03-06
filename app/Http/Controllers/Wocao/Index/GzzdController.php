@@ -13,7 +13,7 @@ class GzzdController extends Controller
     public function index(){
         //分页10篇文章一
         $data = Article::where('a_type','规章制度')->orderBy('created_at','desc')->paginate(10);
-        return view('wocao.gzzd')->with(compact('data'));
+        return view('wocao.face.gzzd')->with(compact('data'));
     }
     //
     public function show($a_id){
@@ -32,6 +32,6 @@ class GzzdController extends Controller
         // dd($pictures);
         //把这个图片绑定发送到新页面
         // dd($data);
-        return view('wocao.article')->with(compact('data','allPath'));
+        return view('wocao.face.article')->with(compact('data','allPath'));
     }
 }
