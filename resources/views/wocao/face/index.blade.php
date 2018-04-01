@@ -28,6 +28,10 @@
                 margin-top : 0;
             }
         </style>
+		<!--[if lt IE 9]>
+    　 <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
     </head>
     <body style="background: url({{url('upload/index_bg3.jpg')}}) no-repeat center fixed;">
     <div class="container hidden-sm hidden-xs">
