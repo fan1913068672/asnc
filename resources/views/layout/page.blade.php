@@ -8,6 +8,7 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/custom/style.css')}}">
     <link href="{{asset('css/sidebar/simple-sidebar.css')}}" rel="stylesheet">
+    @include('layouts.ie8')
 </head>
 <body style="background: url({{url('upload/index_bg3.jpg')}}) no-repeat center fixed;">
 <div class="container hidden-xs hidden-sm">
@@ -96,7 +97,7 @@
             </div>
             --}}
         {{--外链播放器end --}}
-       
+
     </div>
     <div class="col-md-8">
         <div class="panel panel-default">
@@ -129,7 +130,7 @@
 
 {{-- small device --}}
 <div id="wrapper">
-        
+
         <!-- Sidebar -->
         @include('layout.head_sm')
         <!-- /#sidebar-wrapper -->
@@ -168,7 +169,7 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-        
+
     </div>
 @include("layout.jquery")
 @include("layout.bootstrap_js")

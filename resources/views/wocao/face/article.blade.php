@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('css/sidebar/simple-sidebar.css')}}" rel="stylesheet">
+@include('layouts.ie8')
 </head>
 <body>
 
@@ -174,7 +175,7 @@
 </div>
 {{-- small device --}}
 <div id="wrapper">
-        
+
         <!-- Sidebar -->
         @include('layout.head_sm')
         <!-- /#sidebar-wrapper -->
@@ -261,7 +262,7 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-        
+
     </div>
 @include("layout.jquery")
 @include("layout.bootstrap_js")
