@@ -20,13 +20,14 @@
     </select>
     <input class="btn btn-default" type="submit" value="查看"/>
     {!! Form::close() !!}
-    @if(isset($flag) && $flag==true)
+    {{--@if(isset($flag) && $flag==true)--}}
+    @if(true)
         <div class="panel-body">
             <ul class="list-group">
                 <?php $i=1;?>
                 @foreach($data as $v)
                     <?php $path = url('delete_article/'.$v->a_id)?>
-                    <a class="list-group-item" href='javascript:void(0);' onclick="doDelete(this,'{{$path}}');">
+                    <a class="list-group-item" href='#' onclick="doDelete(this,'{{$path}}');">
                         <span class="badge">{{'创建时间:'.$v->created_at}}</span>
                         {{$v->a_title}}
                     </a>
